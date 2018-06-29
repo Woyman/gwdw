@@ -1214,3 +1214,10 @@ footer {
     -webkit-transform: scale(1);
   }
 }
+
+.cover{
+
+  position: absolute;
+  z-index: 0;
+
+}

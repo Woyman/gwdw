@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Buat sendiri</title>
+
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap4/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+  <script type="text/javascript" src="../js/tether.min.js"></script>
+	<script type="text/javascript" src="../js/konva.min.js"></script>
+  <script type="text/javascript" src="../js/jscolor.js"></script>
+
+	<style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: scroll;
+      background-color: #F0F0F0;
+    }
+
+    .drawhere{
+    	background: rgba(255,255,255,0);
+    	height: 600px;
+      margin-top: 10%;
+      margin-left: 9%;
+    	position: absolute;
+      border: solid transparent 2px;
+      z-index: 2;
+    }
+    .drawhere:hover{
+      border: solid cyan 2px;
+    }
+    .uploaded-img{
+      padding: 10px 10px;
+      background: #F0F0F0;
+      border-radius: 5px;
+    }
+    .uploaded-img:hover{
+      background: #CECECE;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="col-md-12 row">
+     
+     <div class="col-md-6">
+       <div id="my-Canvas" class="drawhere">
+        
+       </div>
+       <div class="col-md-12" id="template" style="height: 752px; background: url('../img/template/template22.jpg'); position: relative; margin:auto;">
+        </div>
+      </div>
+      <div class="col-md-6" style="background: #fff;">
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#Picture" role="tab" aria-controls="home" aria-selected="true">Add Picture</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#Text" role="tab" aria-controls="profile" aria-selected="false">Add Text</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Add Clipart</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="Picture" role="tabpanel" aria-labelledby="home-tab">
+            
+            <form action="" method="post" enctype="multipart/form-data" class="form-horizontal" id="formImage">
+              <div class="form-group col-md-12 row" style="margin-top: 50px;">
+              
+                <label class="col-form-label">Input picture here</label>
+                <div class="col-md-6">
+                  <input type="file" name="inputfile" id="my-pic" class="form-control">
+                </div>
+                  <div>
+                    <button type="submit" class="btn btn-primary" id="upload-mypic">Upload</button>
+                  </div>
+              </div>
+            </form>
+
+              <div class="col-md-12 mt-5 container" id="listImgUploaded">           
+              </div>
+
+          </div>
+          <div class="tab-pane fade" id="Text" role="tabpanel" aria-labelledby="profile-tab">
+            
+            <div class="form-group col-md-12 row mt-2">
+              <label class="col-form-label">Text:</label>
+              <div class="col-md-10">
+                <textarea rows="4" class="form-control" id="my-Text"></textarea>              
+              </div>
+              <div class="col-md-1">
+                <button class="btn btn-primary">Write</button>
+              </div>
+            </div>
+
+            <div class="col-md-12 row">
+              <div class="col-md-5">
+                <label class="col-form-label">Font</label>
+                  <select class="form-control" id="fontFamily">
+                    <option value="arial">Arial</option>
+                    <option value="arial">Segoe</option>
+                  </select>
+              </div>
+
+              <div class="col-md-2">
+                  <label class="col-form-label">Color:</label>
+                 <input type="" class="jscolor form-control" name="">
+              </div>
+
+            </div>
+
+          </div>
+          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+        </div>
+
+      </div>
+  </div>
+
+	<script src="../js/jquery-v3.3.2.min.js"></script>
+  <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/myjs/my-buatsendiri.js"></script>
+  <script type="text/javascript">    
+    
+  </script>
+
+</body>
+</html>
