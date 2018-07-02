@@ -51,7 +51,10 @@
         contentType: false,
         data: data,
         success: function(e){
-          var id = e+varImg;
+
+          var str = e.replace(/\s/g, '');
+
+          var id = str+varImg;
           var image2 = new Image();   
           image2.src = '../img/template/'+e; 
           tmpWidht = parseInt(image2.width);
@@ -98,7 +101,34 @@
     });
 
 
-    $('')
+    $('#uploadText').on('click', function(){
+
+      var text = $('#my-Text').val();
+      var font = $('#fontFamily').val();
+      var color = '#'+$('#textColor').val();
+
+      // alert(text+" "+font+" "+color);
+
+
+      text = new Konva.Text({
+
+        x: 50,
+        y: 50,
+        text: text,
+        fontFamily: 'Comic Sans MS',
+        fill: color,
+        fontSize: 14,
+        align: 'left',
+        draggable: true,
+
+      });
+
+      layer.add(text);
+      layer.draw();
+
+
+    });
+
 
 
 
