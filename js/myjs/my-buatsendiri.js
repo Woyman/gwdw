@@ -115,11 +115,25 @@
         x: 50,
         y: 50,
         text: text,
-        fontFamily: 'Comic Sans MS',
+        fontFamily: font,
         fill: color,
         fontSize: 14,
-        align: 'left',
+        align: 'right',
         draggable: true,
+        name: 'object',
+        id: 'text1',
+
+      });
+
+      $('.textCenter').change( function(){
+
+        var id = 'text1';
+
+        if($(this).is(':checked'))
+        {
+          stage.find('#'+id).align('center');
+          layer.draw();
+        } 
 
       });
 
