@@ -100,46 +100,88 @@
 
     });
 
-
+    // upload text 
     $('#uploadText').on('click', function(){
 
-      var text = $('#my-Text').val();
+      var textPlain = $('#my-Text').val();
       var font = $('#fontFamily').val();
       var color = '#'+$('#textColor').val();
-
-      // alert(text+" "+font+" "+color);
+      // var num = 0;
+      var id = 'text'+varImg;
+      alert(id);
 
 
       text = new Konva.Text({
 
         x: 50,
         y: 50,
-        text: text,
+        text: textPlain,
         fontFamily: font,
         fill: color,
         fontSize: 14,
         align: 'right',
         draggable: true,
         name: 'object',
-        id: 'text1',
-
-      });
-
-      $('.textCenter').change( function(){
-
-        var id = 'text1';
-
-        if($(this).is(':checked'))
-        {
-          stage.find('#'+id).align('center');
-          layer.draw();
-        } 
+        id: id,
 
       });
 
       layer.add(text);
       layer.draw();
+      varImg++;
+      // console.log(text);
+      $('#textUploaded').append("<div class='mb-2' id='"+id+"'><div class='col-md-12 row'><div class='col-md-10' style='background: #FFFFFF'><textarea class='form-control' rows='3'>"+textPlain+"</textarea></div><div class='col-md-1'><button class='btn btn-primary updateText'>Update</button><button class='btn btn-danger mt-1 deleteText'>Delete</button></div></div><div class='col-md-12 mt-2 row'><div class='col-md-4 row'><label class='col-form-label'>Color :</label><div class='col-md-8 mt-1'><input value='' class='jscolor form-control form-control-sm updateColorText'></div></div><div class='col-md-4 row'><label class='col-form-label'>Font : </label><select class='form-control form-control-sm col-md-8' id='fontFamilUploaded'><option value='Arial'>Arial</option><option value='Segoe Print'>Segoe Print</option><option value='Segoe UI'>Segoe UI</option><option value='Comic Sans MS'>Comic Sans MS</option><option value='Verdana'>Verdana</option></select></div></div><div class='col-md-12 mt-2 row' id='"+id+"'><div class='m-2' ><input type='radio' name='textAlign' value='center'><i class='fa fa-align-center' title='Align Center'></i></div><div class='m-2'><input type='radio' name='textAlign' value='left'><i class='fa fa-align-left' title='Align Left'></i></div><div class='m-2'><input type='radio' name='textAlign' value='right'><i class='fa fa-align-right' title='Align Right'></i></div><div class='m-2'><input type='radio' name='textAlign' value='justify'><i class='fa fa-align-justify' title='Align Justify'></i></div><div class='m-2 ml-3' id='"+id+"'><input type='checkbox' name='textStyle' value='italic'><i class='fa fa-italic' title='Italic'></i></div><div class='m-2'><input type='checkbox' name='textStyle' value='bold'><i class='fa fa-bold' title='Bold'></i></div><div class='m-2' id='"+id+"'><input type='checkbox' name='textDecoration' value='underline'><i class='fa fa-underline' title='Underline'></i></div></div></div>");
 
+      //text align
+      $("input:radio[name='textAlign']").change( function(){
+
+        var align = $(this).val();
+        var idtext = $(this).parent().parent().attr('id');
+        // alert(idtext);
+        if($(this).is(':checked')){
+          stage.find('#'+idtext).align(align);
+          layer.draw();
+        } 
+
+      });
+
+      //text style like italic or bold 
+      $("input:checkbox[name='textStyle']").change( function(){
+
+        var style = $(this).val();
+        var idtext = $(this).parent().parent().attr('id');
+        var text1 = layer.find('#'+idtext);
+        var Style = text1.fontStyle();      
+         // alert(Style);
+         // console.log(Style);
+        if($(this).is(':checked')){
+          stage.find('#'+idtext).fontStyle(style);
+          layer.draw();
+        }else{
+          stage.find('#'+idtext).fontStyle('');
+          layer.draw();
+        }
+
+      });
+
+      //text dcoration for underline
+      $("input:checkbox[name='textDecoration']").change( function(){
+
+        var decoration = $(this).val();
+        var idtext = $(this).parent().parent().attr('id');
+        // alert(align);
+
+        if($(this).is(':checked')){
+          stage.find('#'+idtext).textDecoration(decoration);
+          layer.draw();
+        }else{
+          stage.find('#'+idtext).textDecoration('');
+          layer.draw();
+        }
+
+      });
+
+      
 
     });
 

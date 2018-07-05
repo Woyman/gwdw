@@ -116,80 +116,76 @@
 
             <div class="col-md-12 mt-3 p-2" id="textUploaded" style="background: #E9E9E6;" >
               
-              <div class="col-md-12 row">
-                <div class="col-md-10" style="background: #FFFFFF">
-                  <textarea class="form-control" rows="3">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                  </textarea>
-                </div>
-                <div class="col-md-1">
-                  <button class="btn btn-primary">Update</button>
-                  <button class="btn btn-danger mt-1">Delete</button>
-                </div>                
-              </div>
-
-              <div class="col-md-12 mt-2 row">
-                <div class="m-2">
-                  <input type="radio" name="textAlign" class="textCenter">
-                  <i class="fa fa-align-center" title="Align Center"></i>
-                </div>
-                <div class="m-2">
-                  <input type="radio" name="textAlign" id="textLeft">
-                  <i class="fa fa-align-left" title="Align Left"></i>
-                </div>
-                <div class="m-2">
-                  <input type="radio" name="textAlign" id="textRight">
-                  <i class="fa fa-align-right" title="Align Right"></i>
-                </div>
-                <div class="m-2">
-                  <input type="radio" name="textAlign" id="textJustify">
-                  <i class="fa fa-align-justify" title="Align Justify"></i>
+              <!-- <div class="mt-2">
+                <div class="col-md-12 row">
+                  <div class="col-md-10" style="background: #FFFFFF">
+                    <textarea class="form-control" rows="3">
+                     
+                    </textarea>
+                  </div>
+                  <div class="col-md-1">
+                    <button class="btn btn-primary updateText">Update</button>
+                    <button class="btn btn-danger mt-1 deleteText">Delete</button>
+                  </div>                
                 </div>
 
-                <div class="m-2 ml-3">
-                  <input type="radio" name="textAlign" id="textJustify">
-                  <i class="fa fa-italic" title="Align Center" title="Text Italic"></i>
-                </div>
-
-                <div class="m-2">
-                  <input type="radio" name="textAlign" id="textJustify">
-                  <i class="fa fa-bold" title="Align Center" title="Text Bold"></i>
-                </div>
-
-                <div class="m-2">
-                  <input type="radio" name="textAlign" id="textJustify">
-                  <i class="fa fa-underline" title="Align Center" title="Text Underline"></i>
-                </div>
-
-              </div>
-
-              <div class="col-md-12 row">
-                  
-                  <div class="col-md-3 row">
-                    <label class="col-form-label">Color :</label>
-                    <div class="col-md-8 mt-1">
-                      <input value="" class="jscolor form-control form-control-sm">
+                <div class="col-md-12 mt-2 row">
+                    
+                    <div class="col-md-4 row">
+                      <label class="col-form-label">Color :</label>
+                      <div class="col-md-8 mt-1">
+                        <input value="" class="jscolor form-control form-control-sm updateColorText">
+                      </div>
+                    </div>
+                    <div class="col-md-4 row">
+                      <label class="col-form-label">Font : </label>
+                        <select class="form-control form-control-sm col-md-8" id="fontFamilUploaded">
+                          <option value="Arial">Arial</option>
+                          <option value="Segoe Print">Segoe Print</option>
+                          <option value="Segoe UI">Segoe UI</option>
+                          <option value="Comic Sans MS">Comic Sans MS</option>
+                          <option value="Verdana">Verdana</option>
+                        </select>                    
                     </div>
                   </div>
-                  <div class="col-md-3 row">
-                    <label class="col-form-label">Font : </label>
-                      <select class="form-control form-control-sm col-md-8" id="fontFamilUploaded">
-                        <option value="Arial">Arial</option>
-                        <option value="Segoe Print">Segoe Print</option>
-                        <option value="Segoe UI">Segoe UI</option>
-                        <option value="Comic Sans MS">Comic Sans MS</option>
-                        <option value="Verdana">Verdana</option>
-                      </select>                    
+
+                <div class="col-md-12 mt-2 row">
+                  <div class="m-2">
+                    <input type="radio" name="textAlign" value="center">
+                    <i class="fa fa-align-center" title="Align Center"></i>
                   </div>
+                  <div class="m-2">
+                    <input type="radio" name="textAlign" value="left">
+                    <i class="fa fa-align-left" title="Align Left"></i>
+                  </div>
+                  <div class="m-2">
+                    <input type="radio" name="textAlign" value="right">
+                    <i class="fa fa-align-right" title="Align Right"></i>
+                  </div>
+                  <div class="m-2">
+                    <input type="radio" name="textAlign" value="justify">
+                    <i class="fa fa-align-justify" title="Align Justify"></i>
+                  </div>
+
+                  <div class="m-2 ml-3">
+                    <input type="checkbox" name="textStyle" value="italic">
+                    <i class="fa fa-italic" title="Italic"></i>
+                  </div>
+
+                  <div class="m-2">
+                    <input type="checkbox" name="textStyle" value="bold">
+                    <i class="fa fa-bold" title="Bold"></i>
+                  </div>
+
+                  <div class="m-2">
+                    <input type="checkbox" name="textDecoration" value="underline">
+                    <i class="fa fa-underline" title="Underline"></i>
+                  </div>
+
                 </div>
 
-            </div>
-
+              </div>  --> 
+            </div> 
           </div>
           <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
         </div>
