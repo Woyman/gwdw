@@ -108,7 +108,7 @@
       var color = '#'+$('#textColor').val();
       // var num = 0;
       var id = 'text'+varImg;
-      alert(id);
+      // alert(id);
 
 
       text = new Konva.Text({
@@ -157,7 +157,7 @@
         if($(this).is(':checked')){
           stage.find('#'+idtext).fontStyle(style);
           layer.draw();
-        }else{
+        }else{ 
           stage.find('#'+idtext).fontStyle('');
           layer.draw();
         }
@@ -178,6 +178,18 @@
           stage.find('#'+idtext).textDecoration('');
           layer.draw();
         }
+
+      });
+
+      $('.deleteText').on('click', function(e){
+
+        var idtext = $(this).parent().parent().parent().attr('id');
+
+        $(this).parent().parent().parent().remove();
+
+        stage.find('#'+idtext).destroy();
+        layer.draw();
+        alert(idtext);
 
       });
 
