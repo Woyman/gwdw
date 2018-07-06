@@ -7,6 +7,10 @@ body {
   font-weight: 300;
   background: #fff;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  background-size: 100% 100%;
+  background-attachment:fixed;
 }
 p {
   font-size: 14px;
@@ -681,9 +685,11 @@ a:not([href]):not([tabindex]):hover {
    Video promo Style
    ========================================================================== */
 .video-promo {
-  background: url(../img/bg_2.jpg) fixed;
+  background: url(../img/final1.png) fixed;
   background-position: cover;
   position: relative;
+  background-size: 100% 100%;
+  background-attachment:fixed;
 }
 .video-promo .video-promo-content {
   color: #fff;
@@ -780,8 +786,10 @@ a:not([href]):not([tabindex]):hover {
    Counter Section Style
    ========================================================================== */
 .counters {
-  background: url(../img/bg1.jpg) fixed;
+  background: url(../img/final2.png) fixed;
   position: relative;
+  background-size: 100% 100%;
+  background-attachment:fixed;
 }
 .counters .facts-item {
   text-align: center;
@@ -1219,5 +1227,7 @@ footer {
 
   position: absolute;
   z-index: 0;
-
+}
+.border{
+  border :solid 1px white;
 }
