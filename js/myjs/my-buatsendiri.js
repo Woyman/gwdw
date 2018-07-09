@@ -130,7 +130,7 @@
       layer.draw();
       varImg++;
       // console.log(text);
-      $('#textUploaded').append("<div class='mb-2' id='"+id+"'><div class='col-md-12 row'><div class='col-md-10' style='background: #FFFFFF'><textarea class='form-control' rows='3'>"+textPlain+"</textarea></div><div class='col-md-1'><button class='btn btn-primary updateText'>Update</button><button class='btn btn-danger mt-1 deleteText'>Delete</button></div></div><div class='col-md-12 mt-2 row'><div class='col-md-4 row'><label class='col-form-label'>Color :</label><div class='col-md-8 mt-1'><input value='' class='jscolor form-control form-control-sm updateColorText'></div></div><div class='col-md-4 row'><label class='col-form-label'>Font : </label><select class='form-control form-control-sm col-md-8' id='fontFamilUploaded'><option value='Arial'>Arial</option><option value='Segoe Print'>Segoe Print</option><option value='Segoe UI'>Segoe UI</option><option value='Comic Sans MS'>Comic Sans MS</option><option value='Verdana'>Verdana</option></select></div></div><div class='col-md-12 mt-2 row' id='"+id+"'><div class='m-2' ><input type='radio' name='textAlign' value='center'><i class='fa fa-align-center' title='Align Center'></i></div><div class='m-2'><input type='radio' name='textAlign' value='left'><i class='fa fa-align-left' title='Align Left'></i></div><div class='m-2'><input type='radio' name='textAlign' value='right'><i class='fa fa-align-right' title='Align Right'></i></div><div class='m-2'><input type='radio' name='textAlign' value='justify'><i class='fa fa-align-justify' title='Align Justify'></i></div><div class='m-2 ml-3' id='"+id+"'><input type='checkbox' name='textStyle' value='italic'><i class='fa fa-italic' title='Italic'></i></div><div class='m-2'><input type='checkbox' name='textStyle' value='bold'><i class='fa fa-bold' title='Bold'></i></div><div class='m-2' id='"+id+"'><input type='checkbox' name='textDecoration' value='underline'><i class='fa fa-underline' title='Underline'></i></div></div></div>");
+      $('#textUploaded').append("<div class='mb-2' id='"+id+"'><div class='col-md-12 row'><div class='col-md-10' style='background: #FFFFFF'><textarea class='form-control' rows='3' id='"+id+"'>"+textPlain+"</textarea></div><div class='col-md-1'><button class='btn btn-primary updateText'>Update</button><button class='btn btn-danger mt-1 deleteText'>Delete</button></div></div><div class='col-md-12 mt-2 row'><div class='col-md-4 row'><label class='col-form-label'>Color :</label><div class='col-md-8 mt-1'><input value='' class='jscolor form-control form-control-sm updateColorText'></div></div><div class='col-md-4 row'><label class='col-form-label'>Font : </label><select class='form-control form-control-sm col-md-8' id='fontFamilUploaded'><option value='Arial'>Arial</option><option value='Segoe Print'>Segoe Print</option><option value='Segoe UI'>Segoe UI</option><option value='Comic Sans MS'>Comic Sans MS</option><option value='Verdana'>Verdana</option></select></div></div><div class='col-md-12 mt-2 row' id='"+id+"'><div class='m-2' ><input type='radio' name='textAlign' value='center'><i class='fa fa-align-center' title='Align Center'></i></div><div class='m-2'><input type='radio' name='textAlign' value='left'><i class='fa fa-align-left' title='Align Left'></i></div><div class='m-2'><input type='radio' name='textAlign' value='right'><i class='fa fa-align-right' title='Align Right'></i></div><div class='m-2'><input type='radio' name='textAlign' value='justify'><i class='fa fa-align-justify' title='Align Justify'></i></div><div class='m-2 ml-3' id='"+id+"'><input type='checkbox' name='textStyle' value='italic'><i class='fa fa-italic' title='Italic'></i></div><div class='m-2'><input type='checkbox' name='textStyle' value='bold'><i class='fa fa-bold' title='Bold'></i></div><div class='m-2' id='"+id+"'><input type='checkbox' name='textDecoration' value='underline'><i class='fa fa-underline' title='Underline'></i></div></div></div>");
 
       //text align
       $("input:radio[name='textAlign']").change( function(){
@@ -181,6 +181,18 @@
 
       });
 
+      //update Text
+      $('.updateText').on('click', function(e){
+
+        var idtext = $(this).parent().parent().parent().attr('id');
+        var t = $('textarea#'+idtext).val();
+        // alert(t);
+        stage.find('#'+idtext).text(t);
+        layer.draw();
+
+      });
+
+      //delete text
       $('.deleteText').on('click', function(e){
 
         var idtext = $(this).parent().parent().parent().attr('id');
@@ -189,11 +201,15 @@
 
         stage.find('#'+idtext).destroy();
         layer.draw();
-        alert(idtext);
+        // alert(idtext);
 
       });
 
-      
+      $('#saveAsImage').on('clikc', function(){
+
+        
+
+      });
 
     });
 
