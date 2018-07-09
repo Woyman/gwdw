@@ -315,6 +315,10 @@ a:not([href]):not([tabindex]):hover {
 #video-area {
   overflow: hidden;
   position: relative;
+  background: url(../img/HOME.png) fixed;
+  background-position: cover;
+  background-size: 100% 100%;
+  background-attachment:fixed;
 }
 #video-area .contents {
   padding: 160px 0 80px;
