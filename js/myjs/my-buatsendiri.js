@@ -71,7 +71,7 @@
           image2.onload = function(){
             var img2 = new Konva.Image({
             x:50,
-            y:50,
+            y:50, 
             width: imgWidth,
             height: imgHeight,
             image: image2,
@@ -205,14 +205,57 @@
 
       });
 
-      $('#saveAsImage').on('clikc', function(){
 
-        
+      $('#saveAsImage').on('clikc', function(){        
 
       });
 
     });
 
+     $("input:checkbox[name='imgClip']").change(function() {
+       
+        var value = $(this).attr('value');
+        
+        var imgSrc = $(this).parent().find('.img-fluid').attr('src');
+
+        // alert(imgName);
+        
+        if($(this).is(':checked')){
+            
+          var clipart = new Image();   
+          clipart.src = imgSrc; 
+          // tmpWidht = 200;
+          // tmpHeight = 200;
+
+          // if( tmpWidht > tmpHeight ){
+          //   var imgWidth = 300;
+          //   var imgHeight = 200;
+          // }else{
+            var imgWidth = 200;
+            var imgHeight = 200;
+          // }
+
+          clipart.onload = function(){
+            var clip = new Konva.Image({
+            x:50,
+            y:50, 
+            width: imgWidth,
+            height: imgHeight,
+            image: clipart,
+            id: imgSrc,
+            name: 'object',
+            draggable: true
+            });
+            layer.add(clip);
+            layer.draw();
+
+          };
+            
+        }else{
+          alert(value);
+        }
+        
+      });
 
 
 
