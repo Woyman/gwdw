@@ -1,4 +1,4 @@
-    var widthOfTemplate = ($('#template').width()/100)*80;
+    var widthOfTemplate = ($('#template').width()/100)*95;
     $(".drawhere").attr('style', 'width:'+widthOfTemplate+'px;');
     var width = $('#my-Canvas').width();
     var height = $('#my-Canvas').height();
@@ -252,7 +252,10 @@
           };
             
         }else{
-          alert(value);
+          
+          stage.find('#'+imgSrc).destroy();
+          layer.draw();
+
         }
         
       });
